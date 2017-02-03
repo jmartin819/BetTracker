@@ -17,9 +17,29 @@
     {{/paper-toolbar-tools}}
   {{/paper-toolbar}}
 
+  {{#paper-sidenav-container}}
+
+  {{#paper-sidenav classNames="md-sidenav-left md-whiteframe-z2" flex-layout="column" flex=true}}
+    {{#link-to 'bets' class="button"}}
+      Bets
+    {{/link-to}}
+    {{#link-to 'submitbet' class="button"}}
+      Submit Bet
+    {{/link-to}}
+  {{/paper-sidenav}}
+
+  {{/paper-sidenav-container}}
+
+  {{#paper-content}}
+
+  {{/paper-content}}
+
+
+
 
 <div class="layout-row mainContent">
-  <div class="flex-15"></div>
+  <div class="flex-15">
+  </div>
   <div class="flex-70">
 
   {{outlet}}
@@ -27,4 +47,3 @@
   </div>
   <div class="flex"></div>
 </div>
-
