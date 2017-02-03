@@ -6,10 +6,10 @@ module.exports = function(environment) {
     environment: environment,
     rootURL: '/',
     firebase: {
-      apiKey: "AIzaSyDUKUg4iMJbTyUy-dzdmPdP79pU1mWBYLU",
-      authDomain: "bettracker-b2be8.firebaseapp.com",
-      databaseURL: "https://bettracker-b2be8.firebaseio.com",
-      storageBucket: "bettracker-b2be8.appspot.com"
+      apiKey: "AIzaSyD6W6YuUVw2RUubKSWvbmvamInXDVYtalw",
+      authDomain: "bettracker-73ddd.firebaseapp.com",
+      databaseURL: "https://bettracker-73ddd.firebaseio.com",
+      storageBucket: "bettracker-73ddd.appspot.com"
     },
     locationType: 'auto',
     EmberENV: {
