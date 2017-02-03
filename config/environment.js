@@ -5,6 +5,12 @@ module.exports = function(environment) {
     modulePrefix: 'bettracker',
     environment: environment,
     rootURL: '/',
+    firebase: {
+      apiKey: "AIzaSyDUKUg4iMJbTyUy-dzdmPdP79pU1mWBYLU",
+      authDomain: "bettracker-b2be8.firebaseapp.com",
+      databaseURL: "https://bettracker-b2be8.firebaseio.com",
+      storageBucket: "bettracker-b2be8.appspot.com"
+    },
     locationType: 'auto',
     EmberENV: {
       FEATURES: {
@@ -21,7 +27,11 @@ module.exports = function(environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     }
+
+
+
   };
+
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;

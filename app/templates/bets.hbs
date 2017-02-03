@@ -1,0 +1,19 @@
+<h2>New Bet</h2>
+<ul class="post-publish">
+  <li>
+    {{input value=amount placeholder="amount"}}
+  </li>
+  <li>
+    {{input value=bettor placeholder="bettor"}}
+  </li>
+  <li>
+    <button {{action "publishBet"}}>Bet!</button>
+  </li>
+</ul>
+
+<section>
+{{#each model as |bet|}}
+  <div>{{bet.amount}}</div>
+  <div>{{bet.bettor}}</div>
+{{/each}}
+</section>
