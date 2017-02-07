@@ -3,25 +3,51 @@
       {{#paper-button iconButton=true}}
         {{paper-icon "menu"}}
       {{/paper-button}}
+
+      <span class="flex-30">
+      {{#if session.isAuthenticated}}
+
+      <h2>BBT 2.0: {{session.currentUser.email}}</h2>
+
+      {{else}}
       <h2>
         Braintrust BetTracker 2.0
       </h2>
-
-      <span class="flex"></span>
+      {{/if}}
+      </span>
+      
+      <span class="flex-10">
       {{#link-to 'bets' class="button"}}
         Bets
       {{/link-to}}
-      <span class="flex"></span>
+      </span>
+
+      <span class="flex-20">
       {{#link-to 'submitbet' class="button"}}
         Submit Bet
       {{/link-to}}
-      <span class="flex"></span>
+      </span>
+      <span class="flex-20">
       {{#paper-button iconButton=true}}
         {{paper-icon "favorite"}}
       {{/paper-button}}
+      <!--
       {{#paper-button iconButton=true}}
         {{paper-icon "more_vert"}}
       {{/paper-button}}
+      -->
+      </span>
+
+      <span class="flex">
+      {{#if session.isAuthenticated}}
+      {{#paper-form onSubmit=(action "signOut") as |form|}}
+          <div class="layout-row">
+            {{#form.submit-button raised=true primary=true}}Sign Out{{/form.submit-button}}
+          </div>
+      {{/paper-form}}
+      {{/if}}
+      </span>
+
     {{/paper-toolbar-tools}}
   {{/paper-toolbar}}
 
@@ -29,6 +55,24 @@
     <div class="flex-15">
     </div>
     <div class="flex-70">
+
+    {{#unless session.isAuthenticated}}
+      {{#paper-form onSubmit=(action "signIn" "password") as |form|}}
+          <div class="layout-row">
+            <div class="layout-column flex-50">
+              {{paper-input label="email" value=email onChange=(action (mut email)) required=true}}
+            </div>
+            
+            <div class="layout-column flex-50">
+              {{paper-input label="password" value=password onChange=(action (mut password)) required=true}}
+            </div>
+          </div>
+
+          <div class="layout-row">
+            {{#form.submit-button raised=true primary=true}}Sign In{{/form.submit-button}}
+          </div>
+        {{/paper-form}}
+    {{/unless}}
 
     {{outlet}}
 
