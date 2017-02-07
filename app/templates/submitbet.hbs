@@ -1,23 +1,23 @@
 {{#paper-form onSubmit=(action "submitbet") as |form|}}
   <div class="layout-row">
     <div class="layout-column flex-50">
-      {{form.input label="Bettor" value=bettor onChange=(action (mut bettor)) required=true}}
+      {{paper-input label="Bettor" value=bettor onChange=(action (mut bettor)) required=true}}
     </div>
     
     <div class="layout-column flex-50">
-      {{form.input label="Acceptor" value=acceptor onChange=(action (mut acceptor)) required=true}}
+      {{paper-input label="Acceptor" value=acceptor onChange=(action (mut acceptor)) required=true}}
     </div>
   </div>
   
   <div class="layout-row">
 	  <div class="layout-column flex-100">
-	        {{form.input label="Amount" value=amount onChange=(action (mut amount)) required=true}}
+	        {{paper-input label="Amount" value=amount onChange=(action (mut amount)) required=true}}
 	  </div>
   </div>
 
   <div class="layout-row">
 	  <div class="layout-column flex-100">
-	        {{form.input label="Description" value=description onChange=(action (mut description)) required=true}}
+	        {{paper-input label="Description" value=description onChange=(action (mut description)) required=true}}
 	  </div>
   </div>
 
@@ -25,3 +25,5 @@
     {{#form.submit-button raised=true primary=true}}Submit{{/form.submit-button}}
   </div>
 {{/paper-form}}
+
+
