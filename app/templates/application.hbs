@@ -30,6 +30,32 @@
     </div>
     <div class="flex-70">
 
+    {{#if session.isAuthenticated}}
+    Logged in as {{session.currentUser.email}}
+    {{#paper-form onSubmit=(action "signOut") as |form|}}
+          <div class="layout-row">
+            {{#form.submit-button raised=true primary=true}}Sign Out{{/form.submit-button}}
+          </div>
+        {{/paper-form}}
+    {{else}}
+
+      {{#paper-form onSubmit=(action "signIn" "password") as |form|}}
+          <div class="layout-row">
+            <div class="layout-column flex-50">
+              {{paper-input label="email" value=email onChange=(action (mut email)) required=true}}
+            </div>
+            
+            <div class="layout-column flex-50">
+              {{paper-input label="password" value=password onChange=(action (mut password)) required=true}}
+            </div>
+          </div>
+
+          <div class="layout-row">
+            {{#form.submit-button raised=true primary=true}}Sign In{{/form.submit-button}}
+          </div>
+        {{/paper-form}}
+    {{/if}}
+
     {{outlet}}
 
     </div>

@@ -5,6 +5,9 @@ module.exports = function(environment) {
     modulePrefix: 'bettracker',
     environment: environment,
     rootURL: '/',
+    torii: {
+      sessionServiceName: 'session'
+    },
     firebase: {
       apiKey: "AIzaSyD6W6YuUVw2RUubKSWvbmvamInXDVYtalw",
       authDomain: "bettracker-73ddd.firebaseapp.com",
