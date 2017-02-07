@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('bets');
   this.route('submitbet');
+  this.route('newuser');
 });
 
 export default Router;

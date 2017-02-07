@@ -1,0 +1,15 @@
+{{#paper-form onSubmit=(action "createUser") as |form|}}
+  <div class="layout-row">
+    <div class="layout-column flex-50">
+      {{paper-input label="email" value=email onChange=(action (mut email)) required=true}}
+    </div>
+    
+    <div class="layout-column flex-50">
+      {{paper-input label="pass" value=pass onChange=(action (mut pass)) required=true}}
+    </div>
+  </div>
+
+  <div class="layout-row">
+    {{#form.submit-button raised=true primary=true}}Create User{{/form.submit-button}}
+  </div>
+{{/paper-form}}
